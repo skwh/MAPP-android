@@ -107,11 +107,11 @@ public class MainActivity extends AppCompatActivity implements HistoryFragment.O
                 case 1:
                     return new HistoryFragment();
                 case 2:
-                    return new HistoryFragment();
+                    return new CalendarFragment();
                 case 3:
                     return new HistoryFragment();
                 case 4:
-                    return new HistoryFragment();
+                    return new StaffFragment();
                 case 5:
                     return new HistoryFragment();
                 default:
