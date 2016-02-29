@@ -128,16 +128,14 @@ public class MainActivity extends AppCompatActivity implements HistoryFragment.O
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
-                case 0:
-                    return "SECTION 1";
                 case 1:
-                    return "SECTION 2";
+                    return "News";
                 case 2:
-                    return "SECTION 3";
+                    return "Calendar";
                 case 3:
-                    return "SECTION 4";
+                    return "Social Media";
                 case 4:
-                    return "SECTION 5";
+                    return "Staff";
                 case 5:
                     return "History";
             }
