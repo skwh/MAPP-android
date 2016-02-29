@@ -105,11 +105,11 @@ public class MainActivity extends AppCompatActivity implements HistoryFragment.O
         public Fragment getItem(int position) {
             switch (position) {
                 case 1:
-                    return new HistoryFragment();
+                    return new NewsFragment();
                 case 2:
                     return new HistoryFragment();
                 case 3:
-                    return new HistoryFragment();
+                    return new SocialMediaFragment();
                 case 4:
                     return new HistoryFragment();
                 case 5:
