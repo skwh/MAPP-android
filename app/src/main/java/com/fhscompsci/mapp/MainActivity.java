@@ -20,7 +20,7 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements HistoryFragment.OnFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements OnFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -104,15 +104,15 @@ public class MainActivity extends AppCompatActivity implements HistoryFragment.O
         @Override
         public Fragment getItem(int position) {
             switch (position) {
-                case 1:
+                case 0:
                     return new NewsFragment();
-                case 2:
+                case 1:
                     return new CalendarFragment();
-                case 3:
+                case 2:
                     return new SocialMediaFragment();
-                case 4:
+                case 3:
                     return new StaffFragment();
-                case 5:
+                case 4:
                     return new HistoryFragment();
                 default:
                     return new HistoryFragment();
@@ -121,22 +121,22 @@ public class MainActivity extends AppCompatActivity implements HistoryFragment.O
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 5 total pages.
             return 5;
         }
 
         @Override
         public CharSequence getPageTitle(int position) {
             switch (position) {
-                case 1:
+                case 0:
                     return "News";
-                case 2:
+                case 1:
                     return "Calendar";
-                case 3:
+                case 2:
                     return "Social Media";
-                case 4:
+                case 3:
                     return "Staff";
-                case 5:
+                case 4:
                     return "History";
             }
             return null;
