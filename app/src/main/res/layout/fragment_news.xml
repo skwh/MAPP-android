@@ -1,20 +1,16 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.fhscompsci.mapp.NewsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-    <TextView
-        android:layout_width="120dp"
-        android:layout_height="100dp"
-        android:text="@string/news_text"
-        android:id="@+id/textView"
-        android:layout_gravity="center" />
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newsListView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-</FrameLayout>
+</RelativeLayout>

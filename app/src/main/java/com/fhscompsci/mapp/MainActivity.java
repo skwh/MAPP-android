@@ -1,5 +1,6 @@
 package com.fhscompsci.mapp;
 
+import android.app.ListFragment;
 import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -18,6 +19,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements OnFragmentInteractionListener {
@@ -31,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+
+    private ListView newsListView;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -56,16 +61,6 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
     }
 
 
