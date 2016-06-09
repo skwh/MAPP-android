@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <department name="Science">
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+    </department>
+    <department name="Language Arts">
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+    </department>
+    <department name="Social Studies">
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+        <teacher first_name="Test" last_name="Teacher" email="test.teacher@school.edu" phone="(123)-456-7890"></teacher>
+    </department>
+</resources>

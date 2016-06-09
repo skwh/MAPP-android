@@ -1,12 +1,23 @@
 package com.fhscompsci.mapp;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.content.res.XmlResourceParser;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.util.Xml;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 
 /**
@@ -23,7 +34,11 @@ public class StaffFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
 
+    private static final String FRAGMENT_ID = "StaffFragment";
+
     private OnFragmentInteractionListener mListener;
+
+    private ListView staffView;
 
     public StaffFragment() {
         // Required empty public constructor
@@ -81,6 +96,63 @@ public class StaffFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    private ArrayList<SchoolDepartment> departmentsFromStrings() throws IOException, XmlPullParserException {
+        ArrayList<StaffMember> staffMembers = new ArrayList<StaffMember>();
+        ArrayList<SchoolDepartment> departments = new ArrayList<SchoolDepartment>();
+        String lastDepartment = "";
+        XmlResourceParser parser = getResources().getXml(R.xml.staff_members);
+        parser.next();
+        int eventType = parser.getEventType();
+        while(eventType != XmlPullParser.END_DOCUMENT) {
+            if (eventType == XmlPullParser.START_TAG) {
+                if (parser.getName().equals("teacher")) {
+                    String firstName = parser.getAttributeValue(0);
+                    String lastName = parser.getAttributeValue(1);
+                    String email = parser.getAttributeValue(2);
+                    String phone = parser.getAttributeValue(3);
+                    StaffMember member = new StaffMember(firstName, lastName, phone, email, lastDepartment);
+                    staffMembers.add(member);
+                } else if (parser.getName().equals("department")) {
+                    String title = parser.getAttributeValue(0);
+                    lastDepartment = title;
+                    SchoolDepartment department = new SchoolDepartment(title);
+                    departments.add(department);
+                }
+            }
+            eventType = parser.next();
+        }
+
+        for (SchoolDepartment d : departments) {
+            for (StaffMember m : staffMembers) {
+                if (m.department.equals(d.name)) {
+                    d.addMember(m);
+                }
+            }
+        }
+
+        // TODO: 6/8/16 FIGURE OUT THE XML PARSER
+        return departments;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        staffView = (ListView) getActivity().findViewById(R.id.departmentListView);
+        ArrayList<SchoolDepartment> departments = null;
+        try {
+            departments = departmentsFromStrings();
+        } catch(IOException e) {
+            e.printStackTrace();
+        } catch(XmlPullParserException e) {
+            e.printStackTrace();
+        }
+        if (departments == null) {
+            departments = new ArrayList<>(0);
+        }
+        DepartmentArrayAdapter adapter = new DepartmentArrayAdapter(getContext(), departments);
+        staffView.setAdapter(adapter);
     }
 
 }

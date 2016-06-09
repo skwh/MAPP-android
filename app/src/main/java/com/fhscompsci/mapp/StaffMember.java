@@ -8,6 +8,7 @@ public class StaffMember {
     public String lastName;
     public String phoneNumber;
     public String email;
+    public String department;
     public int officeNumber;
 
     public StaffMember(String firstName, String lastName, String phoneNumber, String email, int officeNumber) {
@@ -18,9 +19,15 @@ public class StaffMember {
         this.officeNumber = officeNumber;
     }
 
-    public StaffMember(String firstName, String lastName) {
+    public StaffMember(String firstName, String lastName, String phoneNumber, String email, String department) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.department = department;
     }
 
+    public String toString() {
+        return firstName + " " + lastName + ", phone: " + phoneNumber + ", email: " + phoneNumber + ", officeNumber: " + officeNumber + ", in department: " + department;
+    }
 }
