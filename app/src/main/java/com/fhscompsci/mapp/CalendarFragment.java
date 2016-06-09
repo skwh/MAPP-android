@@ -1,12 +1,15 @@
 package com.fhscompsci.mapp;
 
+import android.app.DialogFragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
 
 
 /**
@@ -24,6 +27,8 @@ public class CalendarFragment extends Fragment {
     // TODO: Rename and change types of parameters
 
     private OnFragmentInteractionListener mListener;
+
+    CalendarView calendar;
 
     public CalendarFragment() {
         // Required empty public constructor
@@ -83,6 +88,12 @@ public class CalendarFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        calendar = (CalendarView) getActivity().findViewById(R.id.calendarView);
     }
 
 }

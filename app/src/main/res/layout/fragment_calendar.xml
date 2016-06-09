@@ -5,9 +5,11 @@
     tools:context="com.fhscompsci.mapp.CalendarFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <CalendarView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/calendar_text" />
-
+        android:id="@+id/calendarView"
+        android:layout_gravity="center"
+        android:showWeekNumber="false" />
 </FrameLayout>

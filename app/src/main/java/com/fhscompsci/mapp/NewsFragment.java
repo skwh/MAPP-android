@@ -11,6 +11,11 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
 public class NewsFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
@@ -58,8 +63,11 @@ public class NewsFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        String[] newsStringArray = {"Area Man inhales car exhaust", "Someone has last year's yearbook", "Nobody knows Sky Johnson's last name", "Another news title goes awry", "Virgil's aeneid is very funny", "I mean really look at how funny your mom is", "Dank memes take over local high school"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.news_item, R.id.newsItemTitle, newsStringArray);
+        NewsItem itemOne = new NewsItem("Dank memes overflow local android project", new Date(), "Body Text");
+        NewsItem itemTwo = new NewsItem("Title two", new Date(), "Body Text two");
+        NewsItem itemThree = new NewsItem("Title three", new Date(), "Body Text three");
+        ArrayList<NewsItem> newsItems = new ArrayList<NewsItem>(Arrays.asList(itemOne, itemTwo, itemThree));
+        NewsItemArrayAdapter adapter = new NewsItemArrayAdapter(getActivity(), newsItems);
         newsListView = (ListView) getActivity().findViewById(R.id.newsListView);
         newsListView.setAdapter(adapter);
     }

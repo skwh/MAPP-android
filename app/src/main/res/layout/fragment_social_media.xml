@@ -5,11 +5,9 @@
     tools:context=".SocialMediaFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/social_media_text"
-        android:id="@+id/textView2"
-        android:layout_gravity="center_horizontal|top" />
-
+        android:id="@+id/socialMediaList" />
 </FrameLayout>

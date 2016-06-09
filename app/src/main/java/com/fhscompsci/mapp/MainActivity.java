@@ -13,6 +13,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -139,6 +140,6 @@ public class MainActivity extends AppCompatActivity implements OnFragmentInterac
     }
 
     public void onFragmentInteraction(Uri uri) {
-        // TODO: 2/17/16 figure out what this does
+        Log.d("MainActivity", uri.toString());
     }
 }

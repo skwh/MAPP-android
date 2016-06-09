@@ -4,9 +4,12 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 
 /**
@@ -21,11 +24,15 @@ public class SocialMediaFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
+    private String FRAGMENT_ID = this.getClass().getSimpleName();
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
     private OnFragmentInteractionListener mListener;
+
+    private ListView socialMediaListView;
 
     public SocialMediaFragment() {
         // Required empty public constructor
@@ -60,6 +67,7 @@ public class SocialMediaFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_social_media, container, false);
     }
 
@@ -79,6 +87,15 @@ public class SocialMediaFragment extends Fragment {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
         }
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        socialMediaListView = (ListView) getActivity().findViewById(R.id.socialMediaList);
+        String[] socialMediaLinks = {"BVSD Twitter","Credit Union Twitter", "BVSD Facebook", "Credit Union Facebook"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.social_item, R.id.socialItemTitle, socialMediaLinks);
+        socialMediaListView.setAdapter(adapter);
     }
 
     @Override
