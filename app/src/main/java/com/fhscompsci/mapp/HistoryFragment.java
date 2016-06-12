@@ -1,13 +1,18 @@
 package com.fhscompsci.mapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ScrollView;
 import android.widget.TextView;
+
+import java.util.zip.Inflater;
 
 
 /**
@@ -20,6 +25,12 @@ import android.widget.TextView;
  */
 public class HistoryFragment extends Fragment {
     private OnFragmentInteractionListener mListener;
+
+    private Button linkButton1;
+    private Button linkButton2;
+    private Button linkButton3;
+    private Button linkButton4;
+
 
     public HistoryFragment() {
     }
@@ -53,6 +64,51 @@ public class HistoryFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        linkButton1 = (Button) getActivity().findViewById(R.id.linkButton1);
+        linkButton2 = (Button) getActivity().findViewById(R.id.linkButton2);
+        linkButton3 = (Button) getActivity().findViewById(R.id.linkButton3);
+        linkButton4 = (Button) getActivity().findViewById(R.id.linkButton4);
+
+        linkButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.linkButton1Link)));
+                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(i);
+            }
+        });
+
+        linkButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.linkButton2Link)));
+                startActivity(i);
+            }
+        });
+
+        linkButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.linkButton3Link)));
+                startActivity(i);
+            }
+        });
+
+        linkButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.linkButton4Link)));
+                startActivity(i);
+            }
+        });
+
+        // TODO: 6/12/16 MAKE THESE NOT CRASH THE APP 
+
     }
 
 }

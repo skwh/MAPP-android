@@ -11,6 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -94,7 +97,12 @@ public class SocialMediaFragment extends Fragment {
         super.onStart();
         socialMediaListView = (ListView) getActivity().findViewById(R.id.socialMediaList);
         String[] socialMediaLinks = {"BVSD Twitter","Credit Union Twitter", "BVSD Facebook", "Credit Union Facebook"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),R.layout.social_item, R.id.socialItemTitle, socialMediaLinks);
+        SocialMediaListing bvsdTwitter = new SocialMediaListing("BVSD Twitter","Had to stop by the 3D TV again! #InnovateBVSD");
+        SocialMediaListing creditUnionTwitter = new SocialMediaListing("Credit Union Twitter","Our thoughts are with all those impacted in #Orlando.");
+        SocialMediaListing bvsdFacebook = new SocialMediaListing("BVSD Facebook", "Construction of the new school in Erie got off to a super start with neighborhood kids beginning the excavation at the groundbreaking celebration earlier this week. For more information about the construction project go to: http://bond.bvsd.org/projects/ErieCampus/Pages/default.aspx.");
+        SocialMediaListing creditUnionFacebook = new SocialMediaListing("Credit Union Facebook","We are honored and blessed to have helped Undra of Realities For Children- Boulder County achieve her college dreams!");
+        ArrayList<SocialMediaListing> links = new ArrayList<>(Arrays.asList(bvsdTwitter, creditUnionTwitter, bvsdFacebook, creditUnionFacebook));
+        SocialMediaListingArrayAdapter adapter = new SocialMediaListingArrayAdapter(getContext(),links);
         socialMediaListView.setAdapter(adapter);
     }
 
